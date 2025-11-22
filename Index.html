@@ -1,29 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>For My Cutu 💗</title>
-  <style>
-    body {
-      background: #ffe6f2;
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      padding: 40px;
-    }
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      width: 300px;
-      margin: auto;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Betu 💗</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            background: pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .message {
+            position: absolute;
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff005d;
+            text-align: center;
+        }
+
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 20px;
+            animation: fall 3s linear infinite;
+        }
+
+        @keyframes fall {
+            from { transform: translateY(-10vh); opacity: 1; }
+            to { transform: translateY(110vh); opacity: 0; }
+        }
+    </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Hi Betu 💕</h1>
-    <p>Just wanted to remind you that your cutu is *always* here for you.</p>
-    <p>You're doing amazing, and I’m so proud of you 💗</p>
-  </div>
+    <div class="message">Hi betu 💗 just here for you always 💕</div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "💗";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+            heart.style.animationDuration = (Math.random() * 2 + 2) + "s";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+
+        setInterval(createHeart, 200);
+    </script>
 </body>
 </html>
